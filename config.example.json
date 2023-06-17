@@ -1,0 +1,16 @@
+{
+  "dev": {
+    "db_host": "172.17.0.1",
+    "db_name": "storeman",
+    "db_username": "root",
+    "db_password": "mypass",
+    "app_key":""
+  },
+  "prod": {
+    "db_host": "172.17.0.1",
+    "db_name": "storeman",
+    "db_username": "root",
+    "db_password": "mypass",
+    "app_key":""
+  }
+}
