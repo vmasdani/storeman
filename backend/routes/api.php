@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TenantController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Http\Request;
@@ -22,8 +23,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/tenants', [TenantController::class, 'all']);
+Route::get('/tenants/{id}', [TenantController::class, 'get']);
 Route::post('/tenants', [TenantController::class, 'save']);
 
 Route::get('/transactions', [TransactionController::class, 'all']);
 Route::post('/transactions', [TransactionController::class, 'save']);
 
+Route::get('/secret', [AuthController::class, 'getSecret']);
+Route::get('/jwt-by-email', [AuthController::class, 'getJwtByEmail']);

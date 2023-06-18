@@ -12,6 +12,11 @@ class TenantController
     {
         return new Response(Tenant::all());
     }
+    public function get(int $id)
+    {
+        return new Response(Tenant::query()->find($id));
+    }
+
     public function save(Request $r)
     {
         $body = json_decode($r->getContent());

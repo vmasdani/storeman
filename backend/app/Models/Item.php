@@ -21,6 +21,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Item whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Item extends Model {
-
+class Item extends Model
+{
+    public function itemPrices()
+    {
+        return $this->hasMany(ItemPrice::class);
+    }
 }
