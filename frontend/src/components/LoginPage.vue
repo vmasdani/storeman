@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { ctx } from "../main";
+import { fetchTenant } from "../fetchers";
+import jwtDecode from "jwt-decode";
 
 const d = ref({ email: "", password: "" });
 
@@ -17,6 +19,10 @@ const handleLogin = async () => {
     const token = await resp.text();
 
     ctx.value.apiKey = token;
+    const tenantData = await fetchTenant({
+      id: (jwtDecode(token) as any)?.jti,
+    });
+    ctx.value.tenant = tenantData;
     localStorage.setItem("apiKey", token);
   } catch (e) {
     console.error(e);

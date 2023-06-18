@@ -25,6 +25,7 @@ subprocess.run(
 
 if args.action == "run":
     steps = [
+        ("rm -rf ./backend/public/assets/index-*", "."),
         ("yarn build", "./frontend"),
         ("cp -r frontend/dist/* ./backend/public", "./"),
         ("php artisan serve", "./backend"),
