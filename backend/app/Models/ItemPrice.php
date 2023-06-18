@@ -21,6 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|ItemPrice whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class ItemPrice extends Model {
-
+class ItemPrice extends Model
+{
+    protected $fillable = ['id', 'item_id', 'price'];
 }

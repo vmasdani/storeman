@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->timestamps();
             $table->bigInteger('item_id')->nullable();
-            $table->float('price')->nullable();
+            $table->double('price')->nullable();
         });
     }
 

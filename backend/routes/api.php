@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\TenantController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Http\Request;
@@ -21,6 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/items', [ItemController::class, 'all']);
+Route::post('/items', [ItemController::class, 'save']);
 
 Route::get('/tenants', [TenantController::class, 'all']);
 Route::get('/tenants/{id}', [TenantController::class, 'get']);

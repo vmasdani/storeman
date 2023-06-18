@@ -19,10 +19,15 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Item whereLastPrice($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Item whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Item whereUpdatedAt($value)
+ * @property int|null $tenant_id
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\ItemPrice> $itemPrices
+ * @property-read int|null $item_prices_count
+ * @method static \Illuminate\Database\Eloquent\Builder|Item whereTenantId($value)
  * @mixin \Eloquent
  */
 class Item extends Model
 {
+    protected $fillable = ['id', 'name', 'last_price', 'tenant_id', 'last_price'];
     public function itemPrices()
     {
         return $this->hasMany(ItemPrice::class);
