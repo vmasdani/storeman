@@ -16,18 +16,18 @@ class TransactionType
      */
     const TRANSACTION_UNRECOGNISED = 0;
     /**
-     * Generated from protobuf enum <code>TRANSACTION_IN = 1;</code>
+     * Generated from protobuf enum <code>TX_SELL = 1;</code>
      */
-    const TRANSACTION_IN = 1;
+    const TX_SELL = 1;
     /**
-     * Generated from protobuf enum <code>TRANSACTION_OUT = 2;</code>
+     * Generated from protobuf enum <code>TX_STOCK_IN = 2;</code>
      */
-    const TRANSACTION_OUT = 2;
+    const TX_STOCK_IN = 2;
 
     private static $valueToName = [
         self::TRANSACTION_UNRECOGNISED => 'TRANSACTION_UNRECOGNISED',
-        self::TRANSACTION_IN => 'TRANSACTION_IN',
-        self::TRANSACTION_OUT => 'TRANSACTION_OUT',
+        self::TX_SELL => 'TX_SELL',
+        self::TX_STOCK_IN => 'TX_STOCK_IN',
     ];
 
     public static function name($value)

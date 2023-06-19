@@ -29,3 +29,36 @@ export const fetchItems = async (params: { apiKey: any }) => {
     return null;
   }
 };
+
+export const fetchWarehouses = async (params: { apiKey: any }) => {
+  try {
+    const resp = await fetch(`${window.location.origin}/api/warehouses`, {
+      headers: { Authorization: params.apiKey ?? "" },
+    });
+
+    if (resp.status !== 200) {
+      throw await resp.text();
+    }
+
+    return await resp.json();
+  } catch (e) {
+    return null;
+  }
+};
+
+
+export const fetchTransactions = async (params: { apiKey: any }) => {
+  try {
+    const resp = await fetch(`${window.location.origin}/api/transactions`, {
+      headers: { Authorization: params.apiKey ?? "" },
+    });
+
+    if (resp.status !== 200) {
+      throw await resp.text();
+    }
+
+    return await resp.json();
+  } catch (e) {
+    return null;
+  }
+};

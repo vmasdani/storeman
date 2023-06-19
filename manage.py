@@ -22,6 +22,13 @@ subprocess.run(
     cwd=".",
 )
 
+# proto FE
+subprocess.run(
+    "../protoc -I=../protos --plugin=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=./src ../protos/*.proto",
+    shell=True,
+    cwd="./frontend",
+)
+
 
 if args.action == "run":
     steps = [

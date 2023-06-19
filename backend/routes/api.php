@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\TenantController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\WarehouseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,10 @@ Route::post('/tenants', [TenantController::class, 'save']);
 
 Route::get('/transactions', [TransactionController::class, 'all']);
 Route::post('/transactions', [TransactionController::class, 'save']);
+
+Route::get('/warehouses', [WarehouseController::class, 'all']);
+Route::post('/warehouses', [WarehouseController::class, 'save']);
+
 
 Route::get('/secret', [AuthController::class, 'getSecret']);
 Route::get('/jwt-by-email', [AuthController::class, 'getJwtByEmail']);

@@ -8,10 +8,6 @@ const items = ref([]);
 
 const priceInput = ref(0);
 
-const handleInit = () => {
-  fetchItemsData();
-};
-
 const fetchItemsData = async () => {
   const d = await fetchItems({ apiKey: ctx.value.apiKey ?? "" });
 
@@ -36,7 +32,7 @@ const handleSave = async () => {
   } catch (e) {}
 };
 
-handleInit();
+fetchItemsData();
 </script>
 
 <template>
@@ -170,6 +166,7 @@ handleInit();
               "
               style="cursor: pointer"
             >
+              #{{ i?.id }}:
               {{ i?.name && i?.name !== "" ? i?.name : "No Name" }}
             </div>
           </td>

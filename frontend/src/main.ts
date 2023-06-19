@@ -2,6 +2,7 @@ import { createApp, ref } from "vue";
 import App from "./App.vue";
 import { createRouter, createWebHashHistory } from "vue-router";
 
+import "vue-select/dist/vue-select.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import AdminMainVue from "./components/AdminMain.vue";

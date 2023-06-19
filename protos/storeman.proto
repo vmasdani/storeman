@@ -5,8 +5,8 @@ option php_metadata_namespace="App\\Proto";
 
 enum TransactionType {
     TRANSACTION_UNRECOGNISED=0;
-    TRANSACTION_IN=1;
-    TRANSACTION_OUT=2;
+    TX_SELL=1;
+    TX_STOCK_IN=2;
 }
 enum BomType {
     BOM_UNRECOGNISED=0;
